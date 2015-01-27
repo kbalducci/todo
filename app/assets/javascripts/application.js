@@ -19,8 +19,8 @@ $(document).ready(function () {
 
 });
   $("#new_todo_item").on("ajax:success", function(e, data, status, xhr) {
-    $("#new_todo_item").append(xhr.responseText)
-
+    $("#new_todo_item").append(status)
+    $('#todo-list-container').append("<p>" + data["message"] + "</p")
   }).on("ajax:error", function(e, xhr, status, error {
     $("#new_todo_item").append("<p>error</p>")
   });
